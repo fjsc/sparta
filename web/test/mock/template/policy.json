@@ -182,9 +182,15 @@
   ],
   "steps": [
     {
-      "name": "_POLICY_._STEPS_._INPUT_",
+      "settings": "_POLICY_._STEPS_._SETTINGS_",
       "icon": "icon-input",
       "currentMessage": "_MESSAGE_._INPUT_STEP_"
+    },
+    {
+      "name": "_POLICY_._STEPS_._INPUT_",
+      "icon": "icon-input",
+      "currentMessage": "_MESSAGE_._INPUT_STEP_",
+      "availableMessage": "_MESSAGE_._INPUT_STEP_AVAILABLE_"
     },
     {
       "name": "_POLICY_._STEPS_._TRANSFORMATION_",

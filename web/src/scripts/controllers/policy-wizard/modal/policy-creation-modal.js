@@ -21,12 +21,11 @@
     .module('webApp')
     .controller('PolicyCreationModalCtrl', PolicyCreationModalCtrl);
 
-  PolicyCreationModalCtrl.$inject = ['PolicyModelFactory', 'title', 'PolicyFactory', 'TemplateFactory', '$uibModalInstance'];
+  PolicyCreationModalCtrl.$inject = ['PolicyModelFactory', 'PolicyFactory', 'TemplateFactory',];
 
-  function PolicyCreationModalCtrl(PolicyModelFactory, title, PolicyFactory, TemplateFactory, $uibModalInstance) {
+  function PolicyCreationModalCtrl(PolicyModelFactory, PolicyFactory, TemplateFactory) {
     /*jshint validthis: true*/
     var vm = this;
-    vm.cancel = cancel;
     vm.validateForm = validateForm;
 
     init();
@@ -34,7 +33,7 @@
     ///////////////////////////////////////
 
     function init() {
-      vm.title = title;
+
       return TemplateFactory.getPolicyTemplate().then(function (template) {
         PolicyModelFactory.setTemplate(template);
         vm.policy = PolicyModelFactory.getCurrentPolicy();
@@ -66,9 +65,6 @@
       }
     }
 
-    function cancel() {
-      $uibModalInstance.dismiss('cancel');
-    }
   }
 
 })();

@@ -22,15 +22,18 @@
                         data-timeout=10000></c-animated-msg>
       </header>
       <div data-ng-switch-when="0">
-        <ng-include src="'views/policy-wizard/input.html'"></ng-include>
+        <ng-include src="'views/policy-wizard/settings.html'"></ng-include>
       </div>
       <div data-ng-switch-when="1">
-        <ng-include src="'views/policy-wizard/transformation-step-content.html'"></ng-include>
+        <ng-include src="'views/policy-wizard/input.html'"></ng-include>
       </div>
       <div data-ng-switch-when="2">
-        <ng-include src="'views/policy-wizard/trigger-step-content.html'"></ng-include>
+        <ng-include src="'views/policy-wizard/transformation-step-content.html'"></ng-include>
       </div>
       <div data-ng-switch-when="3">
+        <ng-include src="'views/policy-wizard/trigger-step-content.html'"></ng-include>
+      </div>
+      <div data-ng-switch-when="4">
         <ng-include src="'views/policy-wizard/cube-step-content.html'"></ng-include>
       </div>
       <footer class="c-row c-row--separated-bottom c-row--footer">

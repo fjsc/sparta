@@ -118,6 +118,7 @@
   "_ORIGINAL_MSG_": "Original Msg.",
   "_POLICY_": {
     "_STEPS_": {
+      "_SETTINGS_": "Settings",
       "_INPUT_": "Input",
       "_TRANSFORMATION_": "Transformations",
       "_CUBES_": "Cubes",
@@ -442,7 +443,9 @@
     "_TRANSFORMATION_STEP_": "You have to create, at least, one TRANSFORMATION",
      "_TRIGGER_STEP_": "You can add TRIGGERS, go to CUBES or save the policy",
     "_CUBE_STEP_": "You can add a CUBES configuring, at least, one dimension and one operator or save the policy",
+    "_SETTINGS_STEP_": "You have to set the policie settings to continue",
     "_INPUT_STEP_": "You have to select an input from your list to continue configuring the policy. You only can add one input to policy",
+    "_INPUT_STEP_AVAILABLE_": "Go to INPUT",
     "_CUBE_STEP_AVAILABLE_": "You can add TRIGGERS or go to CUBES",
     "_FINISH_STEP_AVAILABLE_": "You can save the policy",
     "_TRANSFORMATION_STEP_AVAILABLE_": "Go to TRANSFORMATIONS",

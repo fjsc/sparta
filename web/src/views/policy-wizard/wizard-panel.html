@@ -1,4 +1,5 @@
 <c-slider-section data-hidden-section-id="step-progress-bar">
+
   <c-step-progress-bar data-ng-if="wizard.steps" steps="wizard.steps" class="c-slider-content" id="step-progress-bar"
                        data-ng-if="showHiddenSection"
                        data-current-step="(wizard.status.currentStep)"
@@ -22,15 +23,18 @@
                         data-timeout=10000></c-animated-msg>
       </header>
       <div data-ng-switch-when="0">
-        <ng-include src="'views/policy-wizard/input.html'"></ng-include>
+        <ng-include src="'views/policy-wizard/settings.html'"></ng-include>
       </div>
       <div data-ng-switch-when="1">
-        <ng-include src="'views/policy-wizard/transformation-step-content.html'"></ng-include>
+        <ng-include src="'views/policy-wizard/input.html'"></ng-include>
       </div>
       <div data-ng-switch-when="2">
-        <ng-include src="'views/policy-wizard/trigger-step-content.html'"></ng-include>
+        <ng-include src="'views/policy-wizard/transformation-step-content.html'"></ng-include>
       </div>
       <div data-ng-switch-when="3">
+        <ng-include src="'views/policy-wizard/trigger-step-content.html'"></ng-include>
+      </div>
+      <div data-ng-switch-when="4">
         <ng-include src="'views/policy-wizard/cube-step-content.html'"></ng-include>
       </div>
       <footer class="c-row c-row--separated-bottom c-row--footer">
@@ -54,7 +58,7 @@
             data-ng-click="wizard.onClickNextStep()"
             data-qa="policy-next-step-button">
             <i class="icon icon-arrow-right"></i>
-            <span>{{"_GO_TO_" | translate}} {{wizard.steps[wizard.status.currentStep+1].name |translate}}</span>
+            <span>{{"" | translate}} {{wizard.steps[wizard.status.currentStep+1].name |translate}}</span>
           </button>
 
         </div>

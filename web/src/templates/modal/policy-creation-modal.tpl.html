@@ -11,7 +11,8 @@
       <span translate="{{vm.errorText}}"></span>
     </div>
     <form class="c-form" name="vm.form" id="configurationForm" novalidate data-ng-class={'c-accordion-tool--items-hide-left':!(vm.compositionStatus.getConfigurationVisibility())}>
-
+      <textarea style="width:100%" data-ng-model="jsonFileContent"></textarea>
+      <c-input-file-reader file-data="jsonFileContent"></c-input-file-reader>
       <form-field
         data-ng-repeat="properties in vm.template.basicSettings"
         class="c-form-gutter c-col c-col--vertical-top"
@@ -54,11 +55,11 @@
                        data-qa="policy-description-help"></c-icon-link>
         </div><!--
      --><div class="c-col c-col--6 c-col--vertical-centered c-col--to-right">
-        <button class="c-button c-button--call-to-action-1" data-ng-click="vm.validateForm()"
+        <!--<button class="c-button c-button--call-to-action-1" data-ng-click="vm.validateForm()"
                 data-qa="policy-description-next-button">
           <i class="icon icon-arrow-right"></i>
           <span>{{"_GO_TO_POLICY_" | translate}}</span>
-        </button>
+        </button>-->
       </div>
       </footer>
     </form>
