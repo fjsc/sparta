@@ -1,4 +1,4 @@
-<div data-ng-controller="PolicyCreationModalCtrl as vm">
+<div data-ng-controller="PolicySettingsCtrl as vm">
   <div class="c-modal-inner">
     <!-- POLICY NAME ALREADY EXISTS ERROR -->
     <div class="c-row c-row--separated-bottom angular-forms__error" data-ng-if="vm.error" data-qa="error-msg">
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <footer class="c-row c-row--footer">
+      <!--<footer class="c-row c-row--footer">
         <div class="c-col c-col--6 c-col--vertical-centered">
           <c-icon-link icon-class="'c-icon c-icon--is-clickable c-icon--call-to-action icon-help1'"
                        text="'_INPUT_WINDOW_NEW_HELP_' | translate" link-url="vm.helpLink"
@@ -56,7 +56,7 @@
           <span>{{"_GO_TO_POLICY_" | translate}}</span>
         </button>
       </div>
-      </footer>
+      </footer>-->
     </form>
   </div>
 </div>
