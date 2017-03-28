@@ -21,28 +21,44 @@
     .module('webApp')
     .controller('PolicySettingsCtrl', PolicySettingsCtrl);
 
-  PolicySettingsCtrl.$inject = ['PolicyModelFactory', 'PolicyFactory', 'TemplateFactory','WizardStatusService'];
+  PolicySettingsCtrl.$inject = ['PolicyModelFactory', 'PolicyFactory', 'TemplateFactory','WizardStatusService', '$state'];
 
-  function PolicySettingsCtrl(PolicyModelFactory, PolicyFactory, TemplateFactory, WizardStatusService) {
+  function PolicySettingsCtrl(PolicyModelFactory, PolicyFactory, TemplateFactory, WizardStatusService, $state) {
     /*jshint validthis: true*/
     var vm = this;
     vm.validateForm = validateForm;
+    vm.onClickNextStep = onClickNextStep;
 
     init();
 
     ///////////////////////////////////////
 
     function init() {
-      WizardStatusService.enableNextStep();
+      if(!$state.includes('wizard.newPolicy')){
+        vm.nextStepEnabled = true;
+        WizardStatusService.enableNextStep();
+      }
       return TemplateFactory.getPolicyTemplate().then(function (template) {
         PolicyModelFactory.setTemplate(template);
-        vm.policy = PolicyModelFactory.getCurrentPolicy();
+        vm.currentPolicy = PolicyModelFactory.getCurrentPolicy();
+        vm.policy = angular.copy(vm.currentPolicy);
         vm.template = template;
         vm.helpLink = template.helpLinks[0];
+        if(vm.currentPolicy.name.length){
+           WizardStatusService.enableNextStep();
+           vm.isUpdate = true;
+        }
       });
     }
 
-    function validateForm() {
+    function onClickNextStep(next){
+      if($state.includes('wizard.newPolicy') && !vm.nextStepEnabled){
+        return false;
+      }
+      next();
+    }
+
+    function validateForm(next) {
       if (vm.form.$valid) {
         vm.error = false;
         /*Check if the name of the policy already exists*/
@@ -50,7 +66,10 @@
           vm.error = found;
           /* Policy name doesn't exist */
           if (!found) {
-            $uibModalInstance.close();
+            vm.nextStepEnabled = true;
+            WizardStatusService.enableNextStep();
+            angular.extend(vm.currentPolicy, vm.policy);
+            next();
           }
           /* Policy name exists */
           else {

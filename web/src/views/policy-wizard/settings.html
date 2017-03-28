@@ -1,13 +1,17 @@
 <div data-ng-controller="PolicySettingsCtrl as vm">
-  <div class="c-modal-inner">
+
     <!-- POLICY NAME ALREADY EXISTS ERROR -->
     <div class="c-row c-row--separated-bottom angular-forms__error" data-ng-if="vm.error" data-qa="error-msg">
       <i class="c-icon icon-circle-cross"></i>
       <span translate="{{vm.errorText}}"></span>
     </div>
+
     <form class="c-form" name="vm.form" id="configurationForm" novalidate data-ng-class={'c-accordion-tool--items-hide-left':!(vm.compositionStatus.getConfigurationVisibility())}>
-      <!--<textarea style="width:100%" data-ng-model="jsonFileContent"></textarea>
-      <c-input-file-reader file-data="jsonFileContent"></c-input-file-reader>-->
+      <button class="c-button c-button--call-to-action-1 c-button--top-position" data-ng-click="vm.validateForm(wizard.onClickNextStep)"
+              data-qa="policy-description-next-button" ng-if="vm.form.$dirty && vm.isUpdate">
+        <i class="icon icon-circle-plus"></i>
+        <span>{{"_SAVE_CHANGES_GO_INPUT_" | translate}}</span>
+      </button>
       <form-field
         data-ng-repeat="properties in vm.template.basicSettings"
         class="c-form-gutter c-col c-col--vertical-top"
@@ -43,20 +47,24 @@
           </div>
         </div>
       </div>
-      <!--<footer class="c-row c-row--footer">
+      <footer class="c-row c-row--footer">
         <div class="c-col c-col--6 c-col--vertical-centered">
           <c-icon-link icon-class="'c-icon c-icon--is-clickable c-icon--call-to-action icon-help1'"
                        text="'_INPUT_WINDOW_NEW_HELP_' | translate" link-url="vm.helpLink"
                        data-qa="policy-description-help"></c-icon-link>
         </div>
-     <div class="c-col c-col--6 c-col--vertical-centered c-col--to-right">
-        <button class="c-button c-button--call-to-action-1" data-ng-click="vm.validateForm()"
+     <div class="c-col c-col--12 c-col--vertical-centered c-col--to-right">
+       <!--<button type="button" data-ng-class="{'c-button--call-to-action-1' : vm.nextStepEnabled, 'c-button--call-to-action-2': !vm.nextStepEnabled }" class="c-button c-button--to-right ng-scope c-button--left-margin" data-ng-click="vm.onClickNextStep(wizard.onClickNextStep)" data-qa="policy-next-step-button">
+            <i class="icon icon-arrow-right"></i>
+            <span class="ng-binding">{{"_GO_TO_INPUT_" | translate}}</span>
+          </button>-->
+        <button class="c-button c-button--call-to-action-1" data-ng-click="vm.validateForm(wizard.onClickNextStep)"
                 data-qa="policy-description-next-button">
-          <i class="icon icon-arrow-right"></i>
-          <span>{{"_GO_TO_POLICY_" | translate}}</span>
+          <i class="icon icon-circle-plus"></i>
+          <span ng-if="!vm.isUpdate">{{"_SAVE_SETTINGS_GO_INPUT_" | translate}}</span>
+          <span ng-if="vm.isUpdate">{{"_SAVE_CHANGES_GO_INPUT_" | translate}}</span>
         </button>
       </div>
-      </footer>-->
+      </footer>
     </form>
-  </div>
 </div>

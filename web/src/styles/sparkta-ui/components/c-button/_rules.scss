@@ -224,6 +224,12 @@
       background-color: $c-button--icon--square--hover---background-color;
     }
   }
+
+	&--top-position {
+		top:0;
+		position:absolute;
+		right:42px;
+	}
 }
 
 .c-button {

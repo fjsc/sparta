@@ -14,39 +14,45 @@
  * limitations under the License.
  */
 (function (angular) {
-   'use strict';
+    'use strict';
 
-   /*LINE WITH LABEL AND ICON*/
+    /*LINE WITH LABEL AND ICON*/
 
-   angular
-      .module('webApp')
-      .directive('cInputFileReader', cInputFileReader);
+    angular
+        .module('webApp')
+        .directive('cInputFileReader', cInputFileReader);
 
 
-   function cInputFileReader() {
-      return {
-         restrict: 'E',
-         scope: {
-            fileData: '='
-         },
-         replace: true,
-         templateUrl: 'templates/components/c-input-file-reader.tpl.html',
-         link: cInputFileReaderLink
-      }
-   };
+    function cInputFileReader() {
+        return {
+            restrict: 'E',
+            scope: {
+                fileData: '=',
+                buttonText: '='
+            },
+            replace: true,
+            templateUrl: 'templates/components/c-input-file-reader.tpl.html',
+            link: cInputFileReaderLink
+        }
+    };
 
-   cInputFileReaderLink.$inject = ['scope', 'element', 'attributes'];
+    cInputFileReaderLink.$inject = ['scope', 'element', 'attributes'];
 
-   function cInputFileReaderLink(scope, element, attributes) {
-      element.bind("change", function (changeEvent) {
-         var reader = new FileReader();
-         reader.readAsText(event.target.files[0]);
-         reader.onload = function (loadEvent) {
-            scope.$apply(function () {
-               scope.fileData = JSON.stringify(JSON.parse(loadEvent.target.result), null, 2);
-            });
-         }
-      });
-   }
+    function cInputFileReaderLink(scope, element, attributes) {
+
+        scope.click = function () {
+            angular.element('#uploadFileRead').trigger('click');
+        };
+
+        element.bind("change", function (changeEvent) {
+            var reader = new FileReader();
+            reader.readAsText(event.target.files[0]);
+            reader.onload = function (loadEvent) {
+                scope.$apply(function () {
+                    scope.fileData = JSON.stringify(JSON.parse(loadEvent.target.result), null, 2);
+                });
+            }
+        });
+    }
 })(window.angular);
 

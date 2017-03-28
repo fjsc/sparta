@@ -122,6 +122,14 @@ angular
         controllerAs: 'wizard',
         templateUrl: 'views/policy-wizard/wizard-panel.html'
       })
+      .state('wizard.newPolicyJson', {
+        headerClass: 'c-header--small',
+        containerClass: 'c-slider-content__backdrop base-content-wrapper--small-header',
+        url: '/wizard/new_policy_json',
+        controller: 'PolicyJsonCtrl',
+        controllerAs: 'wizard',
+        templateUrl: 'views/policy-wizard/wizard-panel-json.html'
+      })
       .state('wizard.editPolicy', {
         headerClass: 'c-header--small',
         containerClass: 'c-slider-content__backdrop base-content-wrapper--small-header',

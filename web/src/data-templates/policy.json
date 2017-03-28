@@ -2,7 +2,7 @@
   "steps": [
     {
       "name": "_POLICY_._STEPS_._SETTINGS_",
-      "icon": "icon-input",
+      "icon": "icon-cog",
       "currentMessage": "_MESSAGE_._SETTINGS_STEP_",
       "availableMessage": "_MESSAGE_._SETTINGS_STEP_AVAILABLE_",
       "order": 0
@@ -438,7 +438,7 @@
     "https://stratio.atlassian.net/wiki/display/SPARTA1x1x2/Inputs",
     "https://stratio.atlassian.net/wiki/display/SPARTA1x1x2/Transformations",
     "https://stratio.atlassian.net/wiki/display/SPARTA1x1x2/Cubes",
-    "https://stratio.atlassian.net/wiki/display/SPARTA1x1x2/Outputs"
+    "https://stratio.atlassian.net/wiki/display/SPARTA1x1x2/Triggers"
   ],
   "model": {
     "types": [

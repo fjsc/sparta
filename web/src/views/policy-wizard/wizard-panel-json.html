@@ -1,0 +1,31 @@
+<div class="c-slider-content--to-up c-panel--white">
+    <div class="c-step-content">
+        <div class="c-col c-col--12">
+            <c-input-file-reader file-data="wizard.policy.json" button-text="'Upload json file'"></c-input-file-reader>
+        </div>
+        <ng-form name="wizard.form" data-ng-submit="wizard.addTrigger()" novalidate disabled="disabled">
+            <div class="c-col c-col--12">
+                <div data-ng-repeat="properties in wizard.template.properties" class="c-form-gutter c-col c-col--vertical-top" data-ng-class="{'c-col--{{properties.width}}': properties.width}"
+                    data-ng-form-id="name" data-field="properties" data-model="vm.policy" data-form="vm.form" data-st-name="dataSourcenameForm"
+                    data-list-compressed="true" data-qa="policy-name">
+                    <form-field class="c-col" data-ng-class="'c-col--12'" data-list-compressed="true" data-ng-form-id="{{properties.propertyId}}"
+                        data-field="properties" data-model="wizard.policy" data-form="wizard.form" data-st-name="trigger{{properties.propertyName}}Form"
+                        data-qa="{{properties.qa}}">
+                    </form-field>
+                </div>
+            </div>
+            <footer class="c-row c-row--footer">
+                <div class="c-col c-col--6 c-col--vertical-centered">
+                    <c-icon-link icon-class="'c-icon c-icon--is-clickable c-icon--call-to-action icon-help1'" text="'_INPUT_WINDOW_NEW_HELP_' | translate"
+                        link-url="vm.helpLink" data-qa="policy-description-help"></c-icon-link>
+                </div>
+                <div class="c-col c-col--12 c-col--vertical-centered c-col--to-right">
+                    <button class="c-button c-button--call-to-action-1" data-ng-click="wizard.validateForm()" data-qa="policy-description-next-button">
+                        <i class="icon icon-circle-plus"></i>
+                        <span >{{"_POLICY_._SAVE_" | translate}}</span>
+                    </button>
+                </div>
+            </footer>
+        </ng-form>
+    </div>
+</div>

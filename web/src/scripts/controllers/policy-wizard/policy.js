@@ -180,6 +180,10 @@
       return vm.steps && (vm.status.currentStep == vm.steps.length - 1 || (vm.status.currentStep > -1 && vm.steps[vm.status.currentStep].isLastStep));
     }
 
+    function isFirstStep() {
+      return vm.steps && (vm.status.currentStep == 0);
+    }
+
     function onClickNextStep() {
       PolicyModelFactory.setError();
       if (vm.status.nextStepAvailable) {

@@ -183,7 +183,7 @@
   "steps": [
     {
       "settings": "_POLICY_._STEPS_._SETTINGS_",
-      "icon": "icon-input",
+      "icon": "icon-cog",
       "currentMessage": "_MESSAGE_._INPUT_STEP_"
     },
     {

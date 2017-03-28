@@ -31,6 +31,7 @@
     var checkPoliciesStatus = null;
 
     vm.createPolicy = createPolicy;
+    vm.createPolicyJson = createPolicyJson;
     vm.deletePolicy = deletePolicy;
     vm.editPolicy = editPolicy;
     vm.deleteErrorMessage = deleteErrorMessage;
@@ -67,18 +68,14 @@
     function createPolicy() {
       PolicyModelFactory.resetPolicy();
       WizardStatusService.reset();
-      var controller = 'PolicyCreationModalCtrl';
-      var templateUrl = "templates/modal/policy-creation-modal.tpl.html";
-      var resolve = {
-        title: function () {
-          return "_POLICY_._MODAL_CREATION_TITLE_";
-        }
-      };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, null, 'lg');
-      return modalInstance.result.then(function () {
-        WizardStatusService.nextStep();
-        $state.go('wizard.newPolicy');
-      });
+      //WizardStatusService.enableNextStep();
+      WizardStatusService.nextStep();
+      $state.go('wizard.newPolicy', 'create');
+    
+    }
+
+    function createPolicyJson() {
+      $state.go('wizard.newPolicyJson');
     }
 
     function editPolicy(route, policyId) {

@@ -30,6 +30,9 @@
       getPolicyTemplate: function () {
         return ApiTemplateService.getPolicyTemplate().get().$promise;
       },
+      getPolicyJsonTemplate: function(){
+        return ApiTemplateService.getPolicyJsonTemplate().get().$promise;
+      },
       getDimensionTemplateByType: function(dimensionType) {
         var defer = $q.defer();
         dimensionType = dimensionType ? dimensionType.toLowerCase() : 'default';
