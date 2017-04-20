@@ -37,7 +37,14 @@
   "devDependencies": {
     "grunt-connect-proxy": "0.2.0",
     "grunt-contrib-connect": "0.7.1",
-    "grunt-contrib-watch": "0.6.1"
+    "grunt-contrib-watch": "0.6.1",
+    "cross-env": "3.1.4",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.3.0",
+    "webpack-merge": "2.6.1"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --progress --profile --watch --content-base ./"
   },
   "engines": {
     "node": "0.12.2"
