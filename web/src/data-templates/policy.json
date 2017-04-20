@@ -88,14 +88,9 @@
       "position": "right",
       "required": false,
       "propertyType": "select",
-<<<<<<< HEAD
-      "regexp": "local|mesos|marathon|yarn|standalone",
-      "values": [{
-=======
       "regexp": "local|mesos|marathon",
       "values": [
         {
->>>>>>> d077246ae576a73dee6b2117cb1c75802ddc6c52
           "label": "Local",
           "value": "local"
         },
