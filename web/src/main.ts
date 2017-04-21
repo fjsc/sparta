@@ -8,9 +8,19 @@ import './scripts/controllers/inputs';
 import './scripts/controllers/outputs';
 import './scripts/controllers/policy-list';
 import './scripts/controllers/executions-list';
+import './scripts/controllers/policy-list';
 
 /* factories */
 import './scripts/factories/request-interceptor-factory';
+import './scripts/factories/policy-factory';
+import './scripts/factories/policy-model-factory';
+import './scripts/factories/cube-model-factory';
+
+/* services */
+import './scripts/services/wizard-status-service';
+import './scripts/services/api/api-policy-service';
+import './scripts/services/utils-service';
+import './scripts/services/modal-service';
 
 /*stratio-ui*/
 import './stratio-ui/script/helper/ui.stratio.contant.templateUrl';
@@ -33,6 +43,10 @@ import 'scripts/vendors/angular-translate.js';
 
 import './stratio-ui/script/ui.stratio';
 import './scripts/vendors/ui.stratio.grid';
+
+/* constants */
+import './scripts/constants/api-config-settings';
+import './scripts/constants/fragment-constants';
 
 
 

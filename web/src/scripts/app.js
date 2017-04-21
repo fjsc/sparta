@@ -68,10 +68,10 @@ angular
         url: '/dashboard',
         views: {
           'header': {
-            templateUrl: 'views/dashboard/dashboard_header.html'
+            template:  require('views/dashboard/dashboard_header.html')
           },
           'content': {
-            templateUrl: 'views/dashboard/dashboard_content.html'
+            template:  require('views/dashboard/dashboard_content.html')
           }
         }
       })
@@ -79,25 +79,25 @@ angular
         url: '/inputs',
         controller: 'InputsCtrl',
         controllerAs: 'inputs',
-        templateUrl: 'views/inputs.html'
+        template:  require('views/inputs.html')
       })
       .state('dashboard.outputs', {
         url: '/outputs',
         controller: 'OutputsCtrl',
         controllerAs: 'outputs',
-        templateUrl: 'views/outputs.html'
+        template:  require('views/outputs.html')
       })
       .state('dashboard.policies', {
         url: '/policies',
         controller: 'PolicyListCtrl',
         controllerAs: 'policies',
-        templateUrl: 'views/policies.html'
+        template:  require('views/policies.html')
       })
       .state('dashboard.executions', {
         url: '/executions',
         controller: 'ExecutionsListCtrl',
         controllerAs: 'executions',
-        templateUrl: 'views/executions.html'
+        template:  require('views/executions.html')
       })
       .state('dashboard.resources', {
         abstract: true,
@@ -108,13 +108,13 @@ angular
         url: '/plugins',
         controller: 'PluginsListCtrl',
         controllerAs: 'plugins',
-        templateUrl: 'views/plugins.html'
+        template:  require('views/plugins.html')
       })
       .state('dashboard.resources.drivers', {
         url: '/drivers',
         controller: 'DriversListCtrl',
         controllerAs: 'drivers',
-        templateUrl: 'views/drivers.html'
+        template:  require('views/drivers.html')
       })
       /******* POLICY WIZARD *******/
       .state('wizard', {
@@ -122,12 +122,12 @@ angular
 
         views: {
           'header': {
-            templateUrl: 'views/policy-wizard/header.html',
+            template:  require('views/policy-wizard/header.html'),
             controller: 'PolicyWizardHeaderCtrl',
             controllerAs: 'header'
           },
           'content': {
-            templateUrl: 'views/dashboard/dashboard_content.html'
+            template:  require('views/dashboard/dashboard_content.html')
           }
         }
       })
@@ -137,7 +137,7 @@ angular
         url: '/wizard/new_policy',
         controller: 'PolicyCtrl',
         controllerAs: 'wizard',
-        templateUrl: 'views/policy-wizard/wizard-panel.html'
+        template:  require('views/policy-wizard/wizard-panel.html')
       })
       .state('wizard.editPolicy', {
         headerClass: 'c-header--small',
@@ -146,7 +146,7 @@ angular
         params: {id: null},
         controller: 'PolicyCtrl',
         controllerAs: 'wizard',
-        templateUrl: 'views/policy-wizard/wizard-panel.html'
+        template:  require('views/policy-wizard/wizard-panel.html')
       })
       /*******  SETINGS *******/
       .state('settings', {
@@ -155,7 +155,7 @@ angular
           'content': {
             controller: 'SettingsCtrl',
             controllerAs: 'settings',
-            templateUrl: 'views/settings/settings_content.html'
+            template:  require('views/settings/settings_content.html')
           }
         }
       })
