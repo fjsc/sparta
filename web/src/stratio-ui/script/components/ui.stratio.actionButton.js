@@ -19,12 +19,12 @@ angular
 	.module('StratioUI.components.actionButton', [])
 	.directive('stActionButton', stActionButton);
 
-stActionButton.$inject = ['TEMPLATE_URL'];
-function stActionButton(TEMPLATE_URL){
+stActionButton.$inject = [];
+function stActionButton(){
 	var directive = {
 		restrict: 'AE',
 		scope: true,
-		templateUrl: TEMPLATE_URL('components', 'actionButton'),
+		template: require('stratio-ui/template/components/ui.stratio.actionButton.html'),
 		transclude: true,
 		replace: true
 	};

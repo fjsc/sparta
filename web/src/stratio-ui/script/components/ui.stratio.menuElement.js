@@ -24,7 +24,7 @@ function stMenuElement(TEMPLATE_URL, stPassAllAttributes){
 	var directive = {
 		restrict: 'AE',
 		scope: true,
-		templateUrl: TEMPLATE_URL('components', 'menuElement'),
+		template: require('stratio-ui/template/components/ui.stratio.menuElement.html'),
 		transclude: true,
 		link: stPassAllAttributes
 	};

@@ -1,4 +1,5 @@
 import './scripts/app';
+import './styles/main.scss';
 
 import './scripts/filters/truncate-number';
 import './scripts/filters/fragment-filter';

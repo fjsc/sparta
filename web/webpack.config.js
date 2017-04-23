@@ -1,3 +1,5 @@
+"use strict";
+
 let env = 'dev';
 
 switch (process.env.NODE_ENV) {

@@ -24,7 +24,7 @@ function stHeading(TEMPLATE_URL, stPassAllAttributes){
 	var directive = {
 		restrict: 'AE',
 		scope: true,
-		templateUrl: TEMPLATE_URL('components', 'heading'),
+		template: require('stratio-ui/template/components/ui.stratio.heading.html'),
 		transclude: true,
 		replace: true,
 		link: stPassAllAttributes

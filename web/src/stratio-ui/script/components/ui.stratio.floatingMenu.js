@@ -33,7 +33,7 @@ function stFloatingMenu(TEMPLATE_URL){
 			'toggleId': "@",
 			'align': "@"
 		},
-		templateUrl: TEMPLATE_URL('components', 'floatingMenu'),
+		template: require('stratio-ui/template/components/ui.stratio.floatingMenu.html'),
 		transclude: true,
 		controller: controller
 	};
