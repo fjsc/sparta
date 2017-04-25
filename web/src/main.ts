@@ -4,24 +4,52 @@ import './styles/main.scss';
 import './scripts/filters/truncate-number';
 import './scripts/filters/fragment-filter';
 
+import './languages/en-US.json';
+import './data-templates/policy.json';
+
+
 /* controllers */
 import './scripts/controllers/inputs';
 import './scripts/controllers/outputs';
 import './scripts/controllers/policy-list';
 import './scripts/controllers/executions-list';
 import './scripts/controllers/policy-list';
+import './scripts/controllers/policy-wizard/policy';
+import './scripts/controllers/policy-wizard/policy-wizard-header';
+import './scripts/controllers/modal/confirm-modal';
+import './scripts/controllers/plugins-list';
+import './scripts/controllers/policy-wizard/modal/create-entity-modal';
+import './scripts/controllers/policy-wizard/policy-settings';
 
 /* factories */
 import './scripts/factories/request-interceptor-factory';
 import './scripts/factories/policy-factory';
 import './scripts/factories/policy-model-factory';
 import './scripts/factories/cube-model-factory';
+import './scripts/factories/fragment-factory';
+import './scripts/factories/template-factory';
+import './scripts/factories/entity-factory';
 
 /* services */
 import './scripts/services/wizard-status-service';
 import './scripts/services/api/api-policy-service';
 import './scripts/services/utils-service';
 import './scripts/services/modal-service';
+import './scripts/services/api/api-fragment-service';
+import './scripts/services/api/api-template-service';
+import './scripts/services/api/api-fragment-service';
+import './scripts/services/fragment-service';
+import './scripts/services/policy-service';
+import './scripts/services/output-service';
+import './scripts/services/api/api-entities-service';
+
+/* directives */
+import './scripts/directives/c-step-progress-bar-directive';
+import './scripts/directives/c-step-directive';
+import './scripts/directives/c-horizontal-tabs-directive';
+import './stratio-ui/script/directives/forms/form-field-directive';
+import './stratio-ui/script/directives/forms/form-field-input-directive';
+import './stratio-ui/script/directives/forms/form-field-select-directive';
 
 /*stratio-ui*/
 import './stratio-ui/script/helper/ui.stratio.contant.templateUrl';

@@ -37,7 +37,7 @@
         input:'='
       },
       replace: 'true',
-      templateUrl: 'templates/components/c-step-progress-bar.tpl.html',
+      template: require('templates/components/c-step-progress-bar.tpl.html'),
 
       link: function (scope) {
         scope.visited = [];

@@ -55,6 +55,7 @@ angular
     });
     $translateProvider.preferredLanguage(language);
   }])
+  
 
   /*ROUTER*/
   .config(['$stateProvider', '$urlRouterProvider','$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {

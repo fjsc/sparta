@@ -24,7 +24,7 @@
   function formFieldSelect($document, $timeout) {
     var directive = {
       link: link,
-      templateUrl: 'stratio-ui/template/form/form_field_select.html',
+      template: require('stratio-ui/template/form/form_field_select.html'),
       restrict: 'AE',
       replace: true,
       scope: {

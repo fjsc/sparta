@@ -131,7 +131,7 @@
     }
 
     function openConfirmPolicyModal() {
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var controller = "ConfirmModalCtrl";
       var resolve = {
         title: function () {
@@ -145,7 +145,7 @@
           return "";
         }
       };
-      return ModalService.openModal(controller, templateUrl, resolve, '', 'lg');
+      return ModalService.openModal(controller, template, resolve, '', 'lg');
     }
 
     function savePolicy() {

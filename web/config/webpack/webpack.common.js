@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const helpers = require('../helpers');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /*
@@ -38,7 +39,21 @@ module.exports = function (options) {
         template: 'src/index.html',
         chunksSortMode: 'dependency'
       }),
-      new ExtractTextPlugin('assets/css/styles.css')
+      new ExtractTextPlugin('assets/css/styles.css'),
+      new CopyWebpackPlugin([
+        {
+          from: 'src/images',
+          to: 'images'
+        },
+        {
+          from: 'src/data-templates',
+          to: 'data-templates'
+        },
+        {
+          from: 'src/views',
+          to: 'views'
+        }
+      ])
     ],
     module: {
       rules: [
@@ -66,11 +81,15 @@ module.exports = function (options) {
         },
         {
           test: /\.(jpg|png|gif)$/,
-          use: 'file-loader'
+          use: 'file-loader?name=[name].[ext]&outputPath=images/&'
+        },
+        {
+          test: /\.json$/,
+          use: 'file-loader?name=[name].[ext]&outputPath=languages/&'
         },
         {
           test: /\.(ttf|eot|svg|woff|woff2|ico)$/,
-          use: 'file-loader?name=[name].[ext]'
+          use: 'file-loader?name=[name].[ext]&outputPath=assets/css/&'
         }
       ]
 

@@ -36,7 +36,7 @@
         isLastStep: "="
       },
       replace: 'true',
-      templateUrl: 'templates/components/c-step.tpl.html',
+      template: require('templates/components/c-step.tpl.html'),
       link: function(scope) {
         scope.isSelected = function() {
           return scope.index == scope.current;

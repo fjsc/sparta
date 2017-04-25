@@ -28,10 +28,10 @@
     vm.openModalByTemplate = openModalByTemplate;
     vm.showConfirmDialog = showConfirmDialog;
 
-    function openModal(controller, templateUrl, resolve, extraClass, size) {
+    function openModal(controller, template, resolve, extraClass, size) {
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: templateUrl,
+        template: template,
         controller: controller + ' as vm',
         size: size,
         resolve: resolve,

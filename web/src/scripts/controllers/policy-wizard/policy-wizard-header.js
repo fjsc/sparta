@@ -31,7 +31,7 @@
     header.leaveEditor = leaveEditor;
 
     function leaveEditor() {
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var controller = "ConfirmModalCtrl";
       var resolve = {
         title: function () {
@@ -41,7 +41,7 @@
           return "_POLICY_._EXIT_CONFIRMATION_";
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, '', 'lg');
+      var modalInstance = ModalService.openModal(controller, template, resolve, '', 'lg');
 
       return modalInstance.result.then(function () {
         $state.go('dashboard.policies');
