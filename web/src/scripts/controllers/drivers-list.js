@@ -68,7 +68,7 @@
 
     function createDriver() {
       var controller = 'CreateEntityModalCtrl';
-      var templateUrl = "templates/modal/entity-creation-modal.tpl.html";
+      var template = require("templates/modal/entity-creation-modal.tpl.html");
       var resolve = {
         type: function () {
           return "DRIVER";
@@ -83,7 +83,7 @@
           return "_DRIVER_TEXT_";
         },
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, '', 'lg');
+      var modalInstance = ModalService.openModal(controller, template, resolve, '', 'lg');
 
       modalInstance.result.then(function () {
         getAllDrivers();
@@ -97,7 +97,7 @@
 
     function deleteDriverConfirm(size, fileName) {
       var controller = 'DeleteEntityModalCtrl';
-      var templateUrl = "templates/modal/entity-delete-modal.tpl.html";
+      var template = require("templates/modal/entity-delete-modal.tpl.html");
       var resolve = {
         item: function () {
           return fileName;
@@ -109,7 +109,7 @@
           return "_ENTITY_._DELETE_DRIVER_TITLE_";
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, '', size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, '', size);
 
       modalInstance.result.then(function (fileName) {
         var index = UtilsService.getArrayElementPosition(vm.driversData, 'fileName', fileName);

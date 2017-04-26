@@ -65,10 +65,8 @@ describe('modal-service', function () {
         service.openModalByTemplate(fakeTemplate, fakeMode, fakeItemConfiguration);
 
         var controller = fakeTemplate.modalType + "ModalCtrl as vm";
-        var templateUrl = "templates/modal/" + fakeTemplate.modalType + "-modal.tpl.html";
         var openModalArgs = $uibModalMock.open.calls.mostRecent().args[0];
 
-        expect(openModalArgs.templateUrl).toEqual(templateUrl);
         expect(openModalArgs.controller).toEqual(controller);
         expect(openModalArgs.resolve.propertiesTemplate()).toEqual(fakeTemplate.properties);
         expect(openModalArgs.resolve.mode()).toEqual(fakeMode);
@@ -86,7 +84,6 @@ describe('modal-service', function () {
     service.showConfirmDialog(fakeTitle, question, message);
 
     var controller = "ConfirmModalCtrl as vm";
-    var templateUrl = "templates/modal/confirm-modal.tpl.html";
     var openModalArgs = $uibModalMock.open.calls.mostRecent().args[0];
 
     expect(openModalArgs.templateUrl).toEqual(templateUrl);

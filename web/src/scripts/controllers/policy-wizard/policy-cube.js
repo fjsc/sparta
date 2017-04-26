@@ -85,7 +85,7 @@
     }
 
     function addOutputToDimensions(outputName) {
-      var templateUrl = "templates/policies/dimension-modal.tpl.html";
+      var template = require("templates/policies/dimension-modal.tpl.html");
       var controller = "NewDimensionModalCtrl";
       var extraClass = null;
       var size = 'lg';
@@ -108,7 +108,7 @@
         }
       };
 
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, extraClass, size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, extraClass, size);
 
       return modalInstance.result.then(function (dimensionData) {
         vm.cube.dimensions.push(dimensionData.dimension);
@@ -118,7 +118,7 @@
     }
 
     function addFunctionToOperators(functionName) {
-      var templateUrl = "templates/policies/operator-modal.tpl.html";
+      var template = require("templates/policies/operator-modal.tpl.html");
       var controller = "NewOperatorModalCtrl";
       var extraClass = null;
       var size = 'lg';
@@ -139,7 +139,7 @@
           return vm.outputList;
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, extraClass, size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, extraClass, size);
 
       return modalInstance.result.then(function (operator) {
         vm.cube.operators.push(operator);
@@ -148,7 +148,7 @@
     }
 
     function showConfirmModal(title, message) {
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var controller = "ConfirmModalCtrl";
       var extraClass = null;
       var size = 'lg';
@@ -160,7 +160,7 @@
           return message;
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, extraClass, size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, extraClass, size);
       return modalInstance.result;
     }
 

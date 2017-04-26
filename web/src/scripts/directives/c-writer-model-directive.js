@@ -34,7 +34,7 @@
         template: "="
       },
       replace: true,
-      templateUrl: 'templates/components/c-writer-model.tpl.html',
+      template: require('templates/components/c-writer-model.tpl.html'),
       link: link
     };
 

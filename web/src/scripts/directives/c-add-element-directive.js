@@ -45,7 +45,7 @@
         width: '='
       },
       replace: "true",
-      templateUrl: 'templates/components/c-add-element.tpl.html',
+      template: require('templates/components/c-add-element.tpl.html'),
       link: link
     };
 

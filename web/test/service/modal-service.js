@@ -22,7 +22,7 @@ describe('policies.service.model-service', function () {
 
     var openModalArgs = ModalMock.open.calls.mostRecent().args[0];
 
-    expect(openModalArgs.templateUrl).toEqual(fakeTemplate);
+    expect(openModalArgs.template).toEqual(fakeTemplate);
     expect(openModalArgs.controller).toEqual(fakeController + " as vm");
     expect(openModalArgs.resolve).toEqual(fakeResolve);
   });

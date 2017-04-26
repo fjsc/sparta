@@ -38,7 +38,7 @@ function cIconLabel() {
       helpQa: "="
     },
     replace: true,
-    templateUrl: 'templates/components/c-icon-label.tpl.html'
+    template: require('templates/components/c-icon-label.tpl.html')
   }
 };
 })();

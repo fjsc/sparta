@@ -33,7 +33,7 @@
         options: "="
       },
       replace: "true",
-      templateUrl: 'templates/components/c-horizontal-tabs.tpl.html',
+      template: require('templates/components/c-horizontal-tabs.tpl.html'),
       link: link
     };
 

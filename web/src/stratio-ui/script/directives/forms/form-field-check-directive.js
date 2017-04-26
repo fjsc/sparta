@@ -24,7 +24,7 @@
   function formFieldCheck($document) {
     var directive = {
       link: link,
-      templateUrl: 'stratio-ui/template/form/form_field_check.html',
+      template: require('stratio-ui/template/form/form_field_check.html'),
       restrict: 'AE',
       replace: true,
       scope: {

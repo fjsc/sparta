@@ -42,7 +42,7 @@
         width: '@'
       },
       replace: "true",
-      templateUrl: 'templates/components/c-accordion.tpl.html',
+      template: require('templates/components/c-accordion.tpl.html'),
       link: link
     };
 

@@ -105,7 +105,7 @@
     }
 
     function confirmDeleteSaveData() {
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var controller = "ConfirmModalCtrl";
       var extraClass = null;
       var size = 'lg';
@@ -117,7 +117,7 @@
           return ""
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, extraClass, size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, extraClass, size);
       return modalInstance.result.then(function () {
         removeSaveData();
       });

@@ -24,7 +24,7 @@
     function formFieldMultipleList($document) {
         var directive = {
             link: link,
-            templateUrl: 'stratio-ui/template/form/form_field_multiple_list.html',
+            template: require('stratio-ui/template/form/form_field_multiple_list.html'),
             restrict: 'AE',
             replace: true,
             scope: {

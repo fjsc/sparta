@@ -31,7 +31,7 @@
                 buttonText: '='
             },
             replace: true,
-            templateUrl: 'templates/components/c-input-file-reader.tpl.html',
+            template: require('templates/components/c-input-file-reader.tpl.html'),
             link: cInputFileReaderLink
         }
     };

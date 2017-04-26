@@ -24,7 +24,7 @@ function stPrimarySidebarSubmenu(TEMPLATE_URL){
 	var directive = {
 		restrict: 'AE',
 		scope: true,
-		templateUrl: TEMPLATE_URL('components', 'primarySidebarSubmenu'),
+		template: require('stratio-ui/template/components/ui.stratio.primarySidebarSubmenu.html'),
 		transclude: true,
 		link: link
 	};

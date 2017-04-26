@@ -30,7 +30,7 @@ function stQuickSearch(TEMPLATE_URL){
 			'placeholder': '@',
 			'value': '@'
 		},
-		templateUrl: TEMPLATE_URL('components', 'quickSearch'),
+		template: require('stratio-ui/template/components/ui.stratio.quickSearch.html'),
 		link: link,
 		replace: true
 	};

@@ -28,7 +28,7 @@ function stNodeList(TEMPLATE_URL){
 		scope: {
 			nodes: "="
 		},
-		templateUrl: TEMPLATE_URL('components', 'nodeList'),
+		template: require('stratio-ui/template/components/ui.stratio.nodeList.html'),
 		controller: controller,
 		controllerAs: 'vm'
 	};

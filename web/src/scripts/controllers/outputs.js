@@ -159,7 +159,7 @@
       function createOutputModal(newOutputTemplateData) {
         var modalInstance = $uibModal.open({
           animation: true,
-          templateUrl: 'templates/fragments/fragment-details.tpl.html',
+          template: require('templates/fragments/fragment-details.tpl.html'),
           controller: 'NewFragmentModalCtrl as vm',
           size: 'lg',
           resolve: {
@@ -181,7 +181,7 @@
       function editOutputModal(editOutputData) {
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: 'templates/fragments/fragment-details.tpl.html',
+            template: require('templates/fragments/fragment-details.tpl.html'),
             controller: 'EditFragmentModalCtrl as vm',
             size: 'lg',
             resolve: {
@@ -210,7 +210,7 @@
       function deleteOutputConfirm(size, output) {
         var modalInstance = $uibModal.open({
           animation: true,
-          templateUrl: 'templates/components/st-delete-modal.tpl.html',
+          template: require('templates/components/st-delete-modal.tpl.html'),
           controller: 'DeleteFragmentModalCtrl as vm',
           size: size,
           resolve: {
@@ -233,7 +233,7 @@
       function setDuplicatedOutput(size, OutputData) {
         var modalInstance = $uibModal.open({
           animation: true,
-          templateUrl: 'templates/components/st-duplicate-modal.tpl.html',
+          template: require('templates/components/st-duplicate-modal.tpl.html'),
           controller: 'DuplicateFragmentModalCtrl as vm',
           size: 'lg',
           resolve: {

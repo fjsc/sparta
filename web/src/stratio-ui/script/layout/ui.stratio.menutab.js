@@ -33,7 +33,7 @@ function stMenuTab(TEMPLATE_URL){
 			label: '@label',
 			qaref: '@qaref'
 		},
-		templateUrl: TEMPLATE_URL('layout', 'menutab'),
+		template: require('stratio-ui/template/layout/ui.stratio.menutab.html'),
 		controller: controller
 	};
 

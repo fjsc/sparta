@@ -52,7 +52,7 @@
         deleteTransformInput: '='
       },
       replace: "true",
-      templateUrl: 'templates/components/c-output-field-list.tpl.html',
+      template: require('templates/components/c-output-field-list.tpl.html'),
       link: link
     };
 

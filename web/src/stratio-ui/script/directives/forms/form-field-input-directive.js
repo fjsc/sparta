@@ -24,7 +24,7 @@
   function formFieldInput($document) {
     var directive = {
       link: link,
-      templateUrl: 'stratio-ui/template/form/form_field_input.html',
+      template: require('stratio-ui/template/form/form_field_input.html'),
       restrict: 'AE',
       replace: true,
       scope: {

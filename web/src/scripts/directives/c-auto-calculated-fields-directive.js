@@ -33,7 +33,7 @@
         form: "="
       },
       replace: true,
-      templateUrl: 'templates/components/c-auto-calculated-fields.tpl.html',
+      template: require('templates/components/c-auto-calculated-fields.tpl.html'),
       link: link
     };
 

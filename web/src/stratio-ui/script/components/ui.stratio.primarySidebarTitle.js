@@ -26,7 +26,7 @@ function stPrimarySidebarTitle(TEMPLATE_URL){
 		scope: {
 			'classIcon': "@"
 		},
-		templateUrl: TEMPLATE_URL('components', 'primarySidebarTitle'),
+		template: require('stratio-ui/template/components/ui.stratio.primarySidebarTitle.html'),
 		transclude: true
 	};
 

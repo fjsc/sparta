@@ -28,10 +28,10 @@
     vm.openModalByTemplate = openModalByTemplate;
     vm.showConfirmDialog = showConfirmDialog;
 
-    function openModal(controller, templateUrl, resolve, extraClass, size) {
+    function openModal(controller, template, resolve, extraClass, size) {
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: templateUrl,
+        template: template,
         controller: controller + ' as vm',
         size: size,
         resolve: resolve,
@@ -46,7 +46,6 @@
       if (template && template.modalType) {
         var modalType = template.modalType;
         var controller = UtilsService.getInCamelCase(modalType, "-", true) + "ModalCtrl";
-        var templateUrl = "templates/modal/" + modalType + "-modal.tpl.html";
         var resolve = {
           propertiesTemplate: function () {
             return template.properties
@@ -60,14 +59,14 @@
             return itemConfiguration;
           }
         };
-        var modalInstance = openModal(controller, templateUrl, resolve, 'x-lg');
+        var modalInstance = openModal(controller, template, resolve, 'x-lg');
 
         return modalInstance;
       }
     }
 
     function showConfirmDialog(title, question, message) {
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var controller = "ConfirmModalCtrl";
       var resolve = {
         title: function () {
@@ -80,7 +79,7 @@
           return message;
         }
       };
-      var modalInstance = openModal(controller, templateUrl, resolve);
+      var modalInstance = openModal(controller, template, resolve);
       return modalInstance.result;
     }
   }

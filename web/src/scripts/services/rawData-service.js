@@ -91,7 +91,7 @@
     function showConfirmRemoveRawData() {
       var defer = $q.defer();
       var controller = "ConfirmModalCtrl";
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var title = "_REMOVE_TRIGGER_CONFIRM_TITLE_";
       var message = "";
       var size = "lg";
@@ -102,7 +102,7 @@
           return message
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, '', size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, '', size);
 
       modalInstance.result.then(function () {
         defer.resolve();

@@ -85,9 +85,9 @@
 
     function createPolicyFromJSON(){
       var controller = 'CreatePolicyJSONModalCtrl';
-      var templateUrl = "templates/policies/st-create-policy-json-modal.tpl.html";
+      var template = require("templates/policies/st-create-policy-json-modal.tpl.html");
       var resolve = {};
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, '', 'lg');
+      var modalInstance = ModalService.openModal(controller, template, resolve, '', 'lg');
 
       modalInstance.result.then(function () {
         vm.successMessage.text = '_POLICY_CREATE_OK_';
@@ -97,13 +97,13 @@
 
     function deletePolicyConfirm(size, policyId) {
       var controller = 'DeletePolicyModalCtrl';
-      var templateUrl = "templates/policies/st-delete-policy-modal.tpl.html";
+      var template = require("templates/policies/st-delete-policy-modal.tpl.html");
       var resolve = {
         item: function () {
           return policyId;
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, '', size);
+      var modalInstance = ModalService.openModal(controller, template, resolve, '', size);
 
       modalInstance.result.then(function (policyId) {
         var index = UtilsService.getArrayElementPosition(vm.policiesData, 'id', policyId);

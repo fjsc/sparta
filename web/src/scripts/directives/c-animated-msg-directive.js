@@ -36,7 +36,7 @@
         timeout: "@"
       },
       replace: "true",
-      templateUrl: 'templates/components/c-animated-msg.tpl.html',
+      template: require('templates/components/c-animated-msg.tpl.html'),
       link: link
     };
 

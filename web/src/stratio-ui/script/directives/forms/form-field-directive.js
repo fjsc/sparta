@@ -24,7 +24,7 @@
   function formField($timeout) {
     var directive = {
       link: link,
-      templateUrl: 'stratio-ui/template/form/form_field.html',
+      template: require('stratio-ui/template/form/form_field.html'),
       restrict: 'AE',
       replace: true,
       scope: {

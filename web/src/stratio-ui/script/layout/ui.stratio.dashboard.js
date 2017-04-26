@@ -33,7 +33,7 @@ function stDashboard(TEMPLATE_URL){
 		restrict: 'AE',
 		scope: true,
 		transclude: true,
-		templateUrl: TEMPLATE_URL('layout', 'dashboard'),
+		template: require('stratio-ui/template/layout/ui.stratio.dashboard.html'),
 		controller: controller,
 		link: link,
 		replace: true

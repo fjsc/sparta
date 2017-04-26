@@ -41,7 +41,7 @@
         value: "=value"
       },
       replace: "true",
-      templateUrl: 'templates/components/c-slider.tpl.html'
+      template: require('templates/components/c-slider.tpl.html')
     }
   }
 })();

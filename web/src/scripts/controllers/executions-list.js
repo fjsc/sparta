@@ -167,7 +167,7 @@
 
     function showInfoModal(policy, execution) {
       var controller = 'PolicyInfoModalCtrl';
-      var templateUrl = "templates/modal/policy-info-modal.tpl.html";
+      var template = require("templates/modal/policy-info-modal.tpl.html");
       var resolve = {
         policyName: function () {
           return policy.name;
@@ -194,7 +194,7 @@
           return policy.lastError;
         }
       };
-      ModalService.openModal(controller, templateUrl, resolve, '', 'lg');
+      ModalService.openModal(controller, template, resolve, '', 'lg');
     }
 
     /*Stop $interval when changing the view*/

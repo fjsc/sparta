@@ -46,7 +46,7 @@
         helpQa: '@'
       },
       replace: "true",
-      templateUrl: 'templates/components/c-tag-list.tpl.html',
+      template: require('templates/components/c-tag-list.tpl.html'),
       link: link
     };
 

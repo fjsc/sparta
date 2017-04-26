@@ -24,7 +24,7 @@ function stActionButton(TEMPLATE_URL){
 	var directive = {
 		restrict: 'AE',
 		scope: true,
-		templateUrl: TEMPLATE_URL('components', 'actionButton'),
+		template: require('stratio-ui/template/components/ui.stratio.actionButton.html'),
 		transclude: true,
 		replace: true
 	};

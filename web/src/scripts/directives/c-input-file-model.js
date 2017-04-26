@@ -42,7 +42,7 @@
             });
           });
         },
-        templateUrl: 'templates/components/c-input-file.tpl.html'
+        template: require('templates/components/c-input-file.tpl.html')
       };
     }])
 })(window.angular);

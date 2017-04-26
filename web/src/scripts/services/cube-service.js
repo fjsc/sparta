@@ -64,7 +64,7 @@
     function showConfirmRemoveCube() {
       var defer = $q.defer();
       var controller = "ConfirmModalCtrl";
-      var templateUrl = "templates/modal/confirm-modal.tpl.html";
+      var template = require("templates/modal/confirm-modal.tpl.html");
       var title = "_REMOVE_CUBE_CONFIRM_TITLE_";
       var message = "";
       var resolve = {
@@ -74,7 +74,7 @@
           return message
         }
       };
-      var modalInstance = ModalService.openModal(controller, templateUrl, resolve, "", "lg");
+      var modalInstance = ModalService.openModal(controller, template, resolve, "", "lg");
 
       modalInstance.result.then(function () {
         defer.resolve();

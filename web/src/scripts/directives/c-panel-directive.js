@@ -36,7 +36,7 @@
         title: "="
       },
       replace: "true",
-      templateUrl: 'templates/components/c-panel.tpl.html',
+      template: require('templates/components/c-panel.tpl.html'),
       link: link
     };
 

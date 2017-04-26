@@ -24,7 +24,7 @@
   function formFieldTextarea($document) {
     var directive = {
       link: link,
-      templateUrl: 'stratio-ui/template/form/form_field_textarea.html',
+      template: require('stratio-ui/template/form/form_field_textarea.html'),
       restrict: 'AE',
       replace: true,
       scope: {

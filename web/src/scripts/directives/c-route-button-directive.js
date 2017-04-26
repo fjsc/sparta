@@ -35,7 +35,7 @@
         params: '=params'
       },
       replace: "true",
-      templateUrl: "templates/components/c-route-button.tpl.html",
+      template: require("templates/components/c-route-button.tpl.html"),
       link: function (scope, element) {
         element.bind('click', function () {
           if (scope.params == undefined) {
