@@ -39,7 +39,7 @@
       vm.outputsWidth = "m";
       vm.template = PolicyModelFactory.getTemplate();
       vm.policy = PolicyModelFactory.getCurrentPolicy();
-      TriggerService.setTriggerContainer(vm.policy.streamTriggers, triggerConstants.TRANSFORMATION);
+      TriggerService.setTriggerContainer(vm.policy.streamTriggers, triggerConstants.TRIGGER);
       vm.triggerContainer = vm.policy.streamTriggers;
       vm.triggerAccordionStatus = [];
       TriggerService.changeVisibilityOfHelpForSql(true);

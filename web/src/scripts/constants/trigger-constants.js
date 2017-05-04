@@ -20,6 +20,7 @@
     .module('webApp').constant('triggerConstants', {
       TRANSFORMATION: "transformation",
       CUBE: "cube",
+      TRIGGER: "trigger",
     STREAM_TABLE_NAME:"stream"
     });
 })();
