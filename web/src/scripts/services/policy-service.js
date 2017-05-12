@@ -58,6 +58,7 @@
         fragments = fragments.concat(cubeOutputs);
         fragments = fragments.concat(triggerOutputs);
         fragments = fragments.concat(rawDataOutputs);
+        fragments = fragments.concat(getRawDataOutputs);
         fragments = UtilsService.removeDuplicatedJSONs(fragments, 'id');
         convertedFragmentsPolicy.fragments = fragments;
 
@@ -81,7 +82,7 @@
       var cubeOutputs = [];
       for (var c = 0; c < cubes.length; ++c) {
         var cube = cubes[c];
-        if(cube.writer && cube.writer.outputs){
+        if (cube.writer && cube.writer.outputs) {
           cubeOutputs = cubeOutputs.concat(cube.writer.outputs);
         }
 
@@ -96,16 +97,30 @@
       return outputs;
     }
 
-    function getRawDataOutputs(allOutputs){
+    function getRawDataOutputs(allOutputs) {
       var outputs = [];
       var rawData = vm.policy.rawData;
-      if(!rawData || !rawData.writer){
+      if (!rawData || !rawData.writer) {
         return [];
       }
       var rawDataOutputs = rawData.writer.outputs;
-           
+
       if (allOutputs && rawDataOutputs && rawDataOutputs.length) {
         outputs = UtilsService.getFilteredJSONByArray(allOutputs, rawDataOutputs, 'name');
+      }
+      return outputs;
+    }
+
+    function getRawDataOutputs(allOutputs) {
+      var outputs = [];
+      var transformations = vm.policy.transformations;
+      if (!transformations || !transformations.writer) {
+        return [];
+      }
+      var transformationsOutputs = transformations.writer.outputs;
+
+      if (allOutputs && transformationsOutputs && transformationsOutputs.length) {
+        outputs = UtilsService.getFilteredJSONByArray(allOutputs, transformationsOutputs, 'name');
       }
       return outputs;
     }
