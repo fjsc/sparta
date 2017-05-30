@@ -37,7 +37,8 @@
     function fetchData() {
         var initInjector = angular.injector(['ng']);
         var $http = initInjector.get('$http');
-        var timeout = 10000;           
+        var timeout = 10000;                       angular.module('ng').constant('apiConfigSettings', {timeout: timeout});
+            bootstrapApplication();
         return $http.get("config").then(function(config) {
             timeout = config.data.timeout;
         }).finally(function(){
