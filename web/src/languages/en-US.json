@@ -524,6 +524,7 @@
     "_300_": "There was an error. There is no template with this name!",
     "_400_": "There was one or several errors to create the workflow",
     "_401_": "There was an error. You have to add at least a cube or add an output to a trigger",
+    "_403_": "You are not authorized to perform the requested action.",
     "_4000_": "There is at least one cube without name",
     "_4001_": "There is at least one cube without dimensions",
     "_4002_": "The workflow needs at least one output",
